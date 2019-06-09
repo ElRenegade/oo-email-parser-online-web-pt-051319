@@ -7,8 +7,9 @@ class EmailParser
 
 	def parse
 		@emails = @emails.split.collect do|email|
-		email.split(",").uniq.flatten
+		email.split(",")
   end
+  .uniq.flatten
 	end
 
 end
