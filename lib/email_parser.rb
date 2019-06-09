@@ -9,7 +9,7 @@ class EmailParser
 		@emails = @emails.split.collect do|email|
 		email.split(",")
   end
-  .uniq.flatten
+  @emails.uniq.flatten
 	end
 
 end
