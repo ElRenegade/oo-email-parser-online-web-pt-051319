@@ -1,8 +1,13 @@
 class EmailParser
-  attr_accessor :emials
-  @@s_emails = []
-  def self.parse(emails)
+  attr_accessor :emials, :name
+
+  def initialize
     @emials = emails
-    @@s_emails<<@emails.split(",")
+  end
+  def parse(emails)
+    emails.split.collect do|email|
+      email.split(",")
+    end
+    .flatten.uniq
   end
 end
